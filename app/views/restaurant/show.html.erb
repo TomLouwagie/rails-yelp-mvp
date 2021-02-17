@@ -1,0 +1,20 @@
+<ul>
+  <li>
+    <%= @restaurant.name %>
+  </li>
+  <li>
+    <%= @restaurant.address %>
+  </li>
+  <li>
+    <%= @restaurant.category %>
+  </li>
+  <% @restaurant.reviews.each do |review| %>
+    <ul>
+      <li><%= review.rating %></li>
+      <li><%= review.content %></li>
+    </ul>
+  <% end %>
+</ul>
+
+<%= link_to "See all restaurants", restaurant_index_path %>
+<%= link_to 'Leave a review', new_restaurant_review_path(@restaurant) %>
